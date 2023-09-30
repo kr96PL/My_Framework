@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace Framework\Core;
 
 use Framework\Core\Db;
-use Framework\Core\RouteType\RouteTypeEnum;
 
 class App
 {
@@ -25,7 +24,15 @@ class App
         $request_uri = $_SERVER['REQUEST_URI']; 
 
         if ($route = $this->router->getRoute($request_method, $request_uri)) {
-            echo call_user_func($route->getCallback());
+            $callback = $route->getCallback();
+            if (is_array($callback)) {
+                $class = $callback[0];
+                $method = $callback[1];
+                echo (new $class())->$method();
+                return;
+            } 
+            echo call_user_func($callback);
+            return;
         }
     }
 }

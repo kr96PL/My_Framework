@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace Framework\Core;
 
+use Closure;
 use Exception;
 use Framework\Core\RouteType\RouteTypeEnum;
 
@@ -16,7 +17,7 @@ final class Router
         'DELETE' => []
     ];
 
-    public function get(string $path, object $callback): void
+    public function get(string $path, object|array $callback): void
     {
         if ($this->getRoute('GET', $path)) {
             throw new Exception("Path: $path in already declared");
@@ -24,7 +25,7 @@ final class Router
         $this->routes['GET'][] = new Route(RouteTypeEnum::GET, $path, $callback);
     } 
 
-    public function post(string $path, object|callable $callback): void
+    public function post(string $path, object|array $callback): void
     {
         if ($this->getRoute('POST', $path)) {
             throw new Exception("Path: $path in already declared");

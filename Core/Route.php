@@ -8,7 +8,7 @@ use Framework\Core\RouteType\RouteTypeEnum;
 
 class Route 
 {
-    public function __construct(private RouteTypeEnum $type, private string $path, private object $callback) {}
+    public function __construct(private RouteTypeEnum $type, private string $path, private object|array $callback) {}
 
     public function getType(): string
     {
@@ -20,7 +20,7 @@ class Route
         return $this->path;
     }
 
-    public function getCallback(): object
+    public function getCallback(): object|array
     {
         return $this->callback;
     }
