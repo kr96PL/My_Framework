@@ -10,14 +10,14 @@ use PDO;
 
 class Db 
 {
-    private static ?DbProviderInterface $instance = null;
+    private static ?PDO $instance = null;
 
     private function __construct() {}
 
-    public static function getInstance(): DbProviderInterface
+    public static function getInstance(): PDO
     {
         if (self::$instance === null) {
-            self::$instance = self::getProvider();
+            self::$instance = self::getProvider()->getConfig();
         } 
         return self::$instance;
     }

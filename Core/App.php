@@ -5,10 +5,11 @@ declare(strict_types = 1);
 namespace Framework\Core;
 
 use Framework\Core\Db;
+use PDO;
 
 class App
 {
-    public DbProviderInterface $db;
+    public PDO $db;
     public Router $router;
     
 
