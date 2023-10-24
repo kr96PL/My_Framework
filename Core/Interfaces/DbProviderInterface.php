@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace  Framework\Core;
+namespace Framework\Core\Interfaces;
 
 use PDO;
 

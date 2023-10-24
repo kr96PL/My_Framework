@@ -19,13 +19,13 @@ abstract class Model
         $this->db = Db::getInstance();
     }
 
-    public function all()
+    public function all(): array
     {
         $stmt = $this->db->query('SELECT * FROM ' . $this->table_name);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function create(array $passed_values)
+    public function create(array $passed_values): void
     {   
         if (!$this->checkValuesAreAllowed($passed_values)) {
             throw new Exception('Some of passed columns are not allowed.');
@@ -61,7 +61,7 @@ abstract class Model
         return true;
     }
 
-    private function extractValuesToInsert($values)
+    private function extractValuesToInsert($values): string
     {
         $result = '';
         foreach ($values as $key => $value) 

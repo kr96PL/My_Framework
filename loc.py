@@ -6,6 +6,8 @@ allowed_extensions = None
 scripts_folder_path = None
 
 def countLinesInFile(file_path):
+    if "./vendor" in file_path:
+        return False
     if not os.path.exists(file_path):
         print("File: " + file_path + " doesn't exist")
         exit()

@@ -7,6 +7,8 @@ require_once('./vendor/autoload.php');
 use Framework\Core\App;
 use Framework\Core\Router;
 
+session_start();
+
 $dotenv = Dotenv\Dotenv::createMutable(__DIR__);
 $dotenv->load();
 

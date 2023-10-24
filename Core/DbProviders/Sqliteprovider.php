@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Framework\Core\DbProviders;
 
-use Framework\Core\DbProviderInterface;
+use Framework\Core\Interfaces\DbProviderInterface;
 use PDO;
 
 class SqliteProvider implements DbProviderInterface

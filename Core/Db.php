@@ -6,6 +6,7 @@ namespace Framework\Core;
 
 use Framework\Core\DbProviders\MysqlProvider;
 use Framework\Core\DbProviders\SqliteProvider;
+use Framework\Core\Interfaces\DbProviderInterface;
 use PDO;
 
 class Db 
