@@ -51,8 +51,6 @@ class App
                             $args[] = [$parameter->getName() => $parameter->isDefaultValueAvailable() ? $parameter->getDefaultValue() : null];
                         }  
                     }
-                    var_dump($args);
-                    exit;
                 } 
                 $callback_fn = fn() => call_user_func_array($callback, $args);
             }
@@ -65,8 +63,6 @@ class App
                     $middleware_instance = new $class_name();
                     $action = $middleware_instance($callback_fn);
                 }
-                var_dump($action());
-                exit;
                 echo $action;
                 return;
             }
