@@ -10,4 +10,14 @@ abstract class Controller
     {
         return (new View())->show($view_file, $content);
     }
+
+    public function auth(): Auth
+    {
+        return new Auth(); 
+    }
+
+    public function redirect()
+    {
+        return new Redirect();
+    }
 }

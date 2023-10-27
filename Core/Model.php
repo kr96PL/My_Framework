@@ -25,6 +25,15 @@ abstract class Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function find(string $column, string $value, $operator = '='): array
+    {
+        $sql = 'SELECT * FROM ' . $this->table_name . ' WHERE ' . $column . ' ' . $operator . ' ' . ":value";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':value', $value);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function create(array $passed_values): void
     {   
         if (!$this->checkValuesAreAllowed($passed_values)) {

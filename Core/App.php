@@ -65,7 +65,9 @@ class App
                     $middleware_instance = new $class_name();
                     $action = $middleware_instance($callback_fn);
                 }
-                echo $action();
+                var_dump($action());
+                exit;
+                echo $action;
                 return;
             }
 
