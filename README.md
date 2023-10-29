@@ -12,3 +12,4 @@ Current Functionality:
 - request validation
 - render views
 - simple support for console arugments
+- response (json, xml)
