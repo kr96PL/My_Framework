@@ -6,14 +6,15 @@ namespace Framework\Controllers;
 
 use Framework\Core\Controller;
 use Framework\Core\Request;
-use Framework\Models\User;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $users = (new User())->all();
-        return $this->view('home', ['users' => $users]);
+        return $this->response()->xml([
+            'name' => 'Kapi'
+        ]);
+        return $this->view('home');
     }
 
     public function store(Request $request)

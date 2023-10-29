@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Framework\Core;
 
-class Redirect
+final class Redirect
 {
     public function to(string $address) 
     {

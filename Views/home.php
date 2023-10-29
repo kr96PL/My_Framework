@@ -10,9 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php foreach($users as $user) { ?>
-        <p><?=$user['name']?> | <?=$user['email']?></p>
-    <?php } ?>
     <form method="POST" action="">
         <input type="text" name="name" placeholder="name"/>
         <input type="text" name="surname" placeholder="surname"/>

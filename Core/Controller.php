@@ -16,8 +16,13 @@ abstract class Controller
         return new Auth(); 
     }
 
-    public function redirect()
+    public function redirect(): Redirect
     {
         return new Redirect();
+    }
+
+    public function response(): Response
+    {
+        return new Response();
     }
 }

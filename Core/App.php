@@ -66,8 +66,8 @@ class App
                 echo $action;
                 return;
             }
-
             echo $callback_fn();
+           
             return;
         }
     }
